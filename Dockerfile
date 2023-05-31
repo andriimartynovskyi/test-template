@@ -4,7 +4,7 @@ RUN apt install git -y
 RUN git clone https://github.com/andriimartynovskyi/test-template.git
 
 RUN cd test-template
-
+RUN ls
 RUN mvn install
 
 RUN ./* /var/www/html
