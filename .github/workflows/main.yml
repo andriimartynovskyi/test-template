@@ -1,0 +1,13 @@
+on: [push]
+jobs: 
+  update_version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: 'main'
+      - run: echo "123" > version.txt
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: version.txt
